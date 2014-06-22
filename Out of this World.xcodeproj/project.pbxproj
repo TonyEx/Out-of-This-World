@@ -21,6 +21,7 @@
 		C72274971953BDA40003411D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C72274951953BDA40003411D /* InfoPlist.strings */; };
 		C72274991953BDA40003411D /* Out_of_this_WorldTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C72274981953BDA40003411D /* Out_of_this_WorldTests.m */; };
 		C72274A41953BE610003411D /* OWOuterSpaceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C72274A31953BE610003411D /* OWOuterSpaceTableViewController.m */; };
+		C72274A7195776120003411D /* AstronomicalData.m in Sources */ = {isa = PBXBuildFile; fileRef = C72274A6195776120003411D /* AstronomicalData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		C72274981953BDA40003411D /* Out_of_this_WorldTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Out_of_this_WorldTests.m; sourceTree = "<group>"; };
 		C72274A21953BE610003411D /* OWOuterSpaceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OWOuterSpaceTableViewController.h; path = ../OWOuterSpaceTableViewController.h; sourceTree = "<group>"; };
 		C72274A31953BE610003411D /* OWOuterSpaceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OWOuterSpaceTableViewController.m; path = ../OWOuterSpaceTableViewController.m; sourceTree = "<group>"; };
+		C72274A5195776120003411D /* AstronomicalData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AstronomicalData.h; sourceTree = "<group>"; };
+		C72274A6195776120003411D /* AstronomicalData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AstronomicalData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +129,8 @@
 		C72274741953BDA40003411D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C72274A5195776120003411D /* AstronomicalData.h */,
+				C72274A6195776120003411D /* AstronomicalData.m */,
 				C72274751953BDA40003411D /* Out of this World-Info.plist */,
 				C72274761953BDA40003411D /* InfoPlist.strings */,
 				C72274791953BDA40003411D /* main.m */,
@@ -253,6 +258,7 @@
 				C72274A41953BE610003411D /* OWOuterSpaceTableViewController.m in Sources */,
 				C722747E1953BDA40003411D /* OWAppDelegate.m in Sources */,
 				C722747A1953BDA40003411D /* main.m in Sources */,
+				C72274A7195776120003411D /* AstronomicalData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
