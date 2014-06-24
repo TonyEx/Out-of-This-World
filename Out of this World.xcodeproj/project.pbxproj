@@ -77,8 +77,8 @@
 		C7DB4D551958F0BB00E3C3BA /* Saturn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Saturn.jpg; sourceTree = "<group>"; };
 		C7DB4D561958F0BB00E3C3BA /* Uranus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Uranus.jpg; sourceTree = "<group>"; };
 		C7DB4D571958F0BB00E3C3BA /* Venus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Venus.jpg; sourceTree = "<group>"; };
-		C7DB4D621958F12E00E3C3BA /* OWSpaceObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWSpaceObject.h; sourceTree = "<group>"; };
-		C7DB4D631958F12E00E3C3BA /* OWSpaceObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWSpaceObject.m; sourceTree = "<group>"; };
+		C7DB4D621958F12E00E3C3BA /* OWSpaceObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OWSpaceObject.h; path = ../OWSpaceObject.h; sourceTree = "<group>"; };
+		C7DB4D631958F12E00E3C3BA /* OWSpaceObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OWSpaceObject.m; path = ../OWSpaceObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,8 +108,6 @@
 		C72274611953BDA40003411D = {
 			isa = PBXGroup;
 			children = (
-				C7DB4D621958F12E00E3C3BA /* OWSpaceObject.h */,
-				C7DB4D631958F12E00E3C3BA /* OWSpaceObject.m */,
 				C72274731953BDA40003411D /* Out of this World */,
 				C72274921953BDA40003411D /* Out of this WorldTests */,
 				C722746C1953BDA40003411D /* Frameworks */,
@@ -140,6 +138,8 @@
 		C72274731953BDA40003411D /* Out of this World */ = {
 			isa = PBXGroup;
 			children = (
+				C7DB4D621958F12E00E3C3BA /* OWSpaceObject.h */,
+				C7DB4D631958F12E00E3C3BA /* OWSpaceObject.m */,
 				C722747C1953BDA40003411D /* OWAppDelegate.h */,
 				C722747D1953BDA40003411D /* OWAppDelegate.m */,
 				C722747F1953BDA40003411D /* Main.storyboard */,
