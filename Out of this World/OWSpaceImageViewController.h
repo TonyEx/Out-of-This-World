@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OWSpaceImageViewController : UIViewController
+@interface OWSpaceImageViewController : UIViewController <UIScrollViewDelegate>
 
-@property (strong, nonatomic) IBOutlet UIScrollView *ScrollView;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @property(strong, nonatomic) UIImageView *imageView;
 
