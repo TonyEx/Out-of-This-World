@@ -9,6 +9,7 @@
 #import "OWOuterSpaceTableViewController.h"
 #import "AstronomicalData.h"
 #import "OWSpaceObject.h"
+#import "OWSpaceImageViewController.h"
 
 @interface OWOuterSpaceTableViewController ()
 
@@ -66,6 +67,26 @@
 //	NSNumber *floatNumber = [ NSNumber numberWithFloat:3.141592654];
 //	NSLog(@"%@", floatNumber);
 }
+
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+	if ([sender isKindOfClass:[UITableViewCell class]])
+	{
+		if ([segue.destinationViewController isKindOfClass:[OWSpaceImageViewController class]])
+		{
+			OWSpaceImageViewController *nextViewController = segue.destinationViewController;
+			NSIndexPath *path = [self.tableView indexPathForCell:sender];
+			
+			OWSpaceObject *selectedObject = self.planets[path.row];
+			nextViewController.spaceObject = selectedObject;
+			
+		}
+	}
+	
+	
+}
+
 
 - (void)didReceiveMemoryWarning
 {
