@@ -88,8 +88,6 @@
 	
 	if ([sender isKindOfClass:[NSIndexPath class]])
 	{
-		NSLog(@"%@", segue);
-		
 		if ([segue.destinationViewController isKindOfClass:[OWSpaceDataViewController class]])
 		{
 			OWSpaceDataViewController *targetViewController = segue.destinationViewController;
