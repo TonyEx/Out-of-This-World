@@ -10,6 +10,8 @@
 #import "AstronomicalData.h"
 #import "OWSpaceObject.h"
 #import "OWSpaceImageViewController.h"
+#import "OWSpaceDataViewController.h"
+
 
 @interface OWOuterSpaceTableViewController ()
 
@@ -84,7 +86,19 @@
 		}
 	}
 	
-	
+	if ([sender isKindOfClass:[NSIndexPath class]])
+	{
+		NSLog(@"%@", segue);
+		
+		if ([segue.destinationViewController isKindOfClass:[OWSpaceDataViewController class]])
+		{
+			OWSpaceDataViewController *targetViewController = segue.destinationViewController;
+			NSIndexPath *path = sender;
+			OWSpaceObject *selectedObject = self.planets[path.row];
+			
+			targetViewController.spaceObject = selectedObject;
+		}
+	}
 }
 
 
@@ -130,6 +144,15 @@
 	cell.backgroundColor = [UIColor clearColor];
 	
     return cell;
+}
+
+
+#pragma mark UITableView Delegagte
+
+-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+	NSLog(@"Accessory button is working %i", indexPath.row);
+	[self performSegueWithIdentifier:@"pushToSpaceData" sender:indexPath];
 }
 
 

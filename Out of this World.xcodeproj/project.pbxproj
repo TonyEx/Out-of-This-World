@@ -34,6 +34,7 @@
 		C7DB4D611958F0BB00E3C3BA /* Venus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C7DB4D571958F0BB00E3C3BA /* Venus.jpg */; };
 		C7DB4D641958F12E00E3C3BA /* OWSpaceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DB4D631958F12E00E3C3BA /* OWSpaceObject.m */; };
 		C7DB4DB9195A402F00E3C3BA /* OWSpaceImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DB4DB8195A402F00E3C3BA /* OWSpaceImageViewController.m */; };
+		C7E9C7EF1971CDC20058EDEB /* OWSpaceDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E9C7EE1971CDC20058EDEB /* OWSpaceDataViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,8 @@
 		C7DB4D631958F12E00E3C3BA /* OWSpaceObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OWSpaceObject.m; path = ../OWSpaceObject.m; sourceTree = "<group>"; };
 		C7DB4DB7195A402F00E3C3BA /* OWSpaceImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWSpaceImageViewController.h; sourceTree = "<group>"; };
 		C7DB4DB8195A402F00E3C3BA /* OWSpaceImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWSpaceImageViewController.m; sourceTree = "<group>"; };
+		C7E9C7ED1971CDC20058EDEB /* OWSpaceDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWSpaceDataViewController.h; sourceTree = "<group>"; };
+		C7E9C7EE1971CDC20058EDEB /* OWSpaceDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWSpaceDataViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +149,8 @@
 				C722747C1953BDA40003411D /* OWAppDelegate.h */,
 				C722747D1953BDA40003411D /* OWAppDelegate.m */,
 				C722747F1953BDA40003411D /* Main.storyboard */,
+				C7E9C7ED1971CDC20058EDEB /* OWSpaceDataViewController.h */,
+				C7E9C7EE1971CDC20058EDEB /* OWSpaceDataViewController.m */,
 				C7DB4DB7195A402F00E3C3BA /* OWSpaceImageViewController.h */,
 				C7DB4DB8195A402F00E3C3BA /* OWSpaceImageViewController.m */,
 				C72274A21953BE610003411D /* OWOuterSpaceTableViewController.h */,
@@ -321,6 +326,7 @@
 				C722747E1953BDA40003411D /* OWAppDelegate.m in Sources */,
 				C722747A1953BDA40003411D /* main.m in Sources */,
 				C72274A7195776120003411D /* AstronomicalData.m in Sources */,
+				C7E9C7EF1971CDC20058EDEB /* OWSpaceDataViewController.m in Sources */,
 				C7DB4DB9195A402F00E3C3BA /* OWSpaceImageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
