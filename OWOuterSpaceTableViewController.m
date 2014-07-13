@@ -19,6 +19,28 @@
 
 @implementation OWOuterSpaceTableViewController
 
+
+#pragma mark - Lazy Instantiation of properties
+
+-(NSMutableArray *) planets
+{
+	if (!_planets) {
+		_planets = [[NSMutableArray alloc] init];
+	}
+	
+	return _planets;
+}
+
+
+-(NSMutableArray *)addedSpaceObjects
+{
+	if(!_addedSpaceObjects)
+		_addedSpaceObjects = [[NSMutableArray alloc] init];
+	
+	return _addedSpaceObjects;
+}
+
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -38,10 +60,6 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 	
-	
-
-	
-	self.planets = [[NSMutableArray alloc] init];
 	
 	for(NSMutableDictionary *planetData in [AstronomicalData allKnownPlanets])
 	{
@@ -80,11 +98,19 @@
 			OWSpaceImageViewController *nextViewController = segue.destinationViewController;
 			NSIndexPath *path = [self.tableView indexPathForCell:sender];
 			
-			OWSpaceObject *selectedObject = self.planets[path.row];
+			OWSpaceObject *selectedObject;
+			
+			if(path.section == 0)
+				selectedObject = self.planets[path.row];
+			else if (path.section == 1)
+				selectedObject = self.addedSpaceObjects[path.row];
+			
+			
 			nextViewController.spaceObject = selectedObject;
 			
 		}
 	}
+	
 	
 	if ([sender isKindOfClass:[NSIndexPath class]])
 	{
@@ -92,10 +118,22 @@
 		{
 			OWSpaceDataViewController *targetViewController = segue.destinationViewController;
 			NSIndexPath *path = sender;
-			OWSpaceObject *selectedObject = self.planets[path.row];
+			OWSpaceObject *selectedObject;
+			
+			if(path.section == 0)
+				selectedObject = self.planets[path.row];
+			else if (path.section == 1)
+				selectedObject = self.addedSpaceObjects[path.row];
 			
 			targetViewController.spaceObject = selectedObject;
 		}
+	}
+	
+	
+	if ([segue.destinationViewController isKindOfClass:[OWAddSpaceObjectViewController class]])
+	{
+		OWAddSpaceObjectViewController *addSpaceObjectVC = segue.destinationViewController;
+		addSpaceObjectVC.delegate = self;
 	}
 }
 
@@ -105,6 +143,26 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - OWAddSpaceObjectViewController Delegate
+
+-(void)didCancel
+{
+	NSLog(@"didCancel");
+	[self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+-(void)addSpaceObject:(OWSpaceObject *)spaceObject
+{
+	NSLog(@"addSpaceObject");
+	
+	[self.addedSpaceObjects addObject:spaceObject];
+	[self.tableView reloadData];
+	
+	[self dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 #pragma mark - Table view data source
 
@@ -146,6 +204,10 @@
 	}
 	else
 	{
+		OWSpaceObject *planet = self.addedSpaceObjects[indexPath.row];
+		cell.textLabel.text = planet.name;
+		cell.detailTextLabel.text = planet.nickname;
+		cell.imageView.image = planet.spaceImage;
 		
 	}
 	
