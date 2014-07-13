@@ -112,7 +112,11 @@
 {
 //#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 1;
+	
+	if ([self.addedSpaceObjects count])
+		return 2;
+	else
+	    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -120,7 +124,10 @@
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
 	
-	return [self.planets count];
+	if (section == 0)
+		return [self.planets count];
+	else
+		return [self.addedSpaceObjects count];
 }
 
 
@@ -129,16 +136,21 @@
 	static NSString *cellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
-	OWSpaceObject *planet = [self.planets objectAtIndex:indexPath.row];
+	if(indexPath.section == 0)
+	{
+		OWSpaceObject *planet = [self.planets objectAtIndex:indexPath.row];
 	
-	cell.textLabel.text = planet.name;
+		cell.textLabel.text = planet.name;
+		cell.detailTextLabel.text = planet.nickname;
+		cell.imageView.image = planet.spaceImage;
+	}
+	else
+	{
+		
+	}
+	
 	cell.textLabel.textColor = [UIColor whiteColor];
-	
-	cell.detailTextLabel.text = planet.nickname;
 	cell.detailTextLabel.textColor = [UIColor colorWithWhite:0.5 alpha:1.0];
-	
-	cell.imageView.image = planet.spaceImage;
 	cell.backgroundColor = [UIColor clearColor];
 	
     return cell;

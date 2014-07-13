@@ -1,0 +1,23 @@
+//
+//  OWAddSpaceObjectViewController.h
+//  Out of this World
+//
+//  Created by Tony Angelo on 7/13/14.
+//  Copyright (c) 2014 Tony Angelo. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface OWAddSpaceObjectViewController : UIViewController
+
+@property (strong, nonatomic) IBOutlet UITextField *nameTextField;
+@property (strong, nonatomic) IBOutlet UITextField *nicknameTextField;
+@property (strong, nonatomic) IBOutlet UITextField *diameterTextField;
+@property (strong, nonatomic) IBOutlet UITextField *temperatureTextField;
+@property (strong, nonatomic) IBOutlet UITextField *numberOfMoonsTextField;
+@property (strong, nonatomic) IBOutlet UITextField *interestingFactTextField;
+
+- (IBAction)cancelButtonPressed:(UIButton *)sender;
+- (IBAction)addButtonPressed:(UIButton *)sender;
+
+@end
